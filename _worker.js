@@ -1,4 +1,4 @@
-﻿import { connect } from 'cloudflare:sockets';
+import { connect } from 'cloudflare:sockets';
 
 const CHECK_TIMEOUT_MS = 12000;
 const CONNECT_TIMEOUT_MS = 9999;
@@ -4343,7 +4343,17 @@ function generateHTML(备案内容) {
 			}
 
 		}
-	</style>
+	
+/* edgetunnel-ipfilter 结构层 (2.2): 去氛围层, 单列工作区 + 顶部状态条, 扁平卡片 */
+.ambient{display:none !important}
+.page-shell{max-width:1400px !important}
+.site-header{padding:12px 22px !important;border-bottom:1px solid var(--line);margin-bottom:16px !important}
+.brand-title{font-size:19px !important;letter-spacing:-.2px}
+.workspace-grid{grid-template-columns:minmax(0,1fr) !important;gap:14px !important}
+.side-column{order:-1;display:grid !important;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}
+.surface-card{border-radius:10px !important;box-shadow:none !important}
+@media (max-width:920px){.side-column{grid-template-columns:minmax(0,1fr)}}
+</style>
 </head>
 <body>
 	<div class="page-shell">
