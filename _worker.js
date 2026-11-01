@@ -1771,10 +1771,8 @@ function generateHTML(备案内容) {
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<meta name="color-scheme" content="light dark">
-	<title>Check Socks5</title>
-	<link rel="preconnect" href="https://fonts.googleapis.com">
-	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-	<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+	<title>SOCKS5 代理检测 · CheckSocks5</title>
+	
 	<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
 	<script>
 		(function () {
@@ -1796,25 +1794,25 @@ function generateHTML(备案内容) {
 	</script>
 	<style>
 		:root {
-			--bg-base: #07111d;
-			--bg-deep: #0b1726;
-			--panel: rgba(10, 24, 40, 0.78);
-			--panel-strong: rgba(15, 31, 49, 0.92);
-			--line: rgba(144, 180, 212, 0.18);
-			--text: #edf7ff;
-			--text-soft: #d4e4f3;
-			--muted: #8ea6bc;
-			--accent: #61dbff;
+			--bg-base: #060809;
+			--bg-deep: #0c1113;
+			--panel: rgba(12, 17, 19, 0.82);
+			--panel-strong: rgba(17, 24, 27, 0.94);
+			--line: rgba(49, 66, 74, 0.55);
+			--text: #eef6f5;
+			--text-soft: #c3d2d0;
+			--muted: #a3bab5;
+			--accent: #14b8a6;
 			--accent-strong: #2dd4bf;
-			--accent-warm: #ffb869;
+			--accent-warm: #f59e0b;
 			--success: #34d399;
 			--error: #fb7185;
 			--warning: #fbbf24;
 			--shadow: 0 24px 80px rgba(0, 0, 0, 0.34);
 			--shadow-soft: 0 16px 44px rgba(0, 0, 0, 0.26);
-			--radius-xl: 30px;
-			--radius-lg: 24px;
-			--radius-md: 20px;
+			--radius-xl: 16px;
+			--radius-lg: 12px;
+			--radius-md: 10px;
 		}
 
 		html {
@@ -1823,15 +1821,15 @@ function generateHTML(备案内容) {
 
 		html[data-theme='light'] {
 			color-scheme: light;
-			--bg-base: #eef6fb;
+			--bg-base: #f4f7f7;
 			--bg-deep: #ffffff;
 			--panel: rgba(255, 255, 255, 0.72);
 			--panel-strong: rgba(255, 255, 255, 0.92);
-			--line: rgba(95, 123, 150, 0.18);
-			--text: #10253d;
-			--text-soft: #23415a;
-			--muted: #61778f;
-			--accent: #0ea5e9;
+			--line: rgba(49, 66, 74, 0.18);
+			--text: #14201e;
+			--text-soft: #42534f;
+			--muted: #5d726d;
+			--accent: #0d9488;
 			--accent-strong: #14b8a6;
 			--accent-warm: #f59e0b;
 			--success: #059669;
@@ -1851,11 +1849,11 @@ function generateHTML(备案内容) {
 		}
 
 		body {
-			font-family: 'Plus Jakarta Sans', system-ui, sans-serif;
+			font-family: Inter, -apple-system, 'Segoe UI', Roboto, 'PingFang SC', 'Microsoft YaHei', system-ui, sans-serif;
 			color: var(--text);
 			background:
 				radial-gradient(circle at top left, rgba(45, 212, 191, 0.18), transparent 28%),
-				radial-gradient(circle at 85% 12%, rgba(97, 219, 255, 0.18), transparent 24%),
+				radial-gradient(circle at 85% 12%, rgba(37, 99, 235, 0.16), transparent 24%),
 				radial-gradient(circle at 50% 110%, rgba(255, 184, 105, 0.16), transparent 30%),
 				linear-gradient(180deg, #06101b 0%, #081321 38%, #0a1624 100%);
 			overflow-x: hidden;
@@ -1943,7 +1941,7 @@ function generateHTML(备案内容) {
 			height: 34rem;
 			left: -9rem;
 			top: 10rem;
-			background: rgba(97, 219, 255, 0.22);
+			background: rgba(37, 99, 235, 0.2);
 		}
 
 		.ambient-two {
@@ -2018,7 +2016,7 @@ function generateHTML(备案内容) {
 		}
 
 		.brand-title {
-			font-family: 'Space Grotesk', 'Plus Jakarta Sans', sans-serif;
+			font-family: 'JetBrains Mono', ui-monospace, Inter, -apple-system, 'Segoe UI', Roboto, 'PingFang SC', 'Microsoft YaHei', sans-serif;
 			font-size: clamp(1.7rem, 4vw, 2.75rem);
 			font-weight: 700;
 			line-height: 0.98;
@@ -2067,7 +2065,7 @@ function generateHTML(备案内容) {
 			flex: none;
 			border-radius: 999px;
 			border: 1px solid rgba(255, 255, 255, 0.08);
-			background: linear-gradient(135deg, rgba(97, 219, 255, 0.18), rgba(45, 212, 191, 0.12));
+			background: linear-gradient(135deg, rgba(37, 99, 235, 0.16), rgba(45, 212, 191, 0.12));
 			box-shadow: 0 10px 24px rgba(0, 0, 0, 0.18);
 			transition: transform 0.2s ease, background 0.28s ease, border-color 0.28s ease, box-shadow 0.28s ease;
 		}
@@ -2430,7 +2428,7 @@ function generateHTML(备案内容) {
 			border: none;
 			padding: 16px 20px;
 			border-radius: 22px;
-			background: linear-gradient(135deg, var(--accent), #8cf2ff 52%, var(--accent-warm));
+			background: linear-gradient(135deg, #14b8a6, #2563eb);
 			color: #052538;
 			font-weight: 800;
 			cursor: pointer;
@@ -2469,7 +2467,7 @@ function generateHTML(备案内容) {
 			cursor: wait;
 			transform: none;
 			opacity: 0.74;
-			box-shadow: 0 14px 26px rgba(97, 219, 255, 0.18);
+			box-shadow: 0 14px 26px rgba(37, 99, 235, 0.16);
 		}
 
 		.progress-container {
@@ -2576,7 +2574,7 @@ function generateHTML(备案内容) {
 
 		.summary-backend-badge.state-loading {
 			background: rgba(97, 219, 255, 0.08);
-			border-color: rgba(97, 219, 255, 0.18);
+			border-color: rgba(37, 99, 235, 0.16);
 			color: #9feaff;
 		}
 
@@ -2641,7 +2639,7 @@ function generateHTML(备案内容) {
 		}
 
 		.metric-card strong {
-			font-family: 'Space Grotesk', 'Plus Jakarta Sans', sans-serif;
+			font-family: 'JetBrains Mono', ui-monospace, Inter, -apple-system, 'Segoe UI', Roboto, 'PingFang SC', 'Microsoft YaHei', sans-serif;
 			font-size: 1.65rem;
 			letter-spacing: -0.04em;
 		}
@@ -2825,7 +2823,7 @@ function generateHTML(备案内容) {
 
 		.filter-chip.is-active {
 			border-color: rgba(97, 219, 255, 0.46);
-			background: linear-gradient(135deg, rgba(97, 219, 255, 0.22), rgba(52, 211, 153, 0.14));
+			background: linear-gradient(135deg, rgba(37, 99, 235, 0.2), rgba(52, 211, 153, 0.14));
 			color: #ffffff;
 			box-shadow: inset 0 0 0 1px rgba(97, 219, 255, 0.12);
 		}
@@ -3115,7 +3113,7 @@ function generateHTML(备案内容) {
 		}
 
 		.result-ip {
-			font-family: 'Space Grotesk', 'Plus Jakarta Sans', monospace;
+			font-family: 'JetBrains Mono', ui-monospace, Inter, -apple-system, 'Segoe UI', Roboto, 'PingFang SC', 'Microsoft YaHei', monospace;
 			font-size: 1.08rem;
 			font-weight: 700;
 			word-break: break-word;
@@ -3135,7 +3133,7 @@ function generateHTML(备案内容) {
 
 		.copy-target:hover,
 		.copy-target:focus-visible {
-			color: #8be9ff;
+			color: #2dd4bf;
 			text-shadow: 0 0 18px rgba(97, 219, 255, 0.28);
 		}
 
@@ -3279,7 +3277,7 @@ function generateHTML(备案内容) {
 
 		.meta-chip-strong {
 			background: rgba(97, 219, 255, 0.12);
-			border-color: rgba(97, 219, 255, 0.22);
+			border-color: rgba(37, 99, 235, 0.2);
 			color: #dff9ff;
 		}
 
@@ -3337,7 +3335,7 @@ function generateHTML(备案内容) {
 
 		.exit-ip-card.is-copied {
 			border-color: rgba(97, 219, 255, 0.6);
-			background: linear-gradient(135deg, rgba(97, 219, 255, 0.22), rgba(52, 211, 153, 0.14));
+			background: linear-gradient(135deg, rgba(37, 99, 235, 0.2), rgba(52, 211, 153, 0.14));
 		}
 
 		.exit-ip-copy {
@@ -3346,7 +3344,7 @@ function generateHTML(备案内容) {
 			padding: 0;
 			margin: 0;
 			color: var(--text);
-			font-family: 'Space Grotesk', 'Plus Jakarta Sans', monospace;
+			font-family: 'JetBrains Mono', ui-monospace, Inter, -apple-system, 'Segoe UI', Roboto, 'PingFang SC', 'Microsoft YaHei', monospace;
 			font-size: 1.05rem;
 			font-weight: 700;
 			word-break: break-word;
@@ -3357,7 +3355,7 @@ function generateHTML(备案内容) {
 
 		.exit-ip-copy:hover,
 		.exit-ip-copy:focus-visible {
-			color: #8be9ff;
+			color: #2dd4bf;
 			text-shadow: 0 0 18px rgba(97, 219, 255, 0.28);
 		}
 
@@ -3368,7 +3366,7 @@ function generateHTML(备案内容) {
 		}
 
 		.exit-ip-card.is-copied .exit-ip-copy {
-			color: #8be9ff;
+			color: #2dd4bf;
 		}
 
 		.exit-ip-detail-toggle {
@@ -3397,7 +3395,7 @@ function generateHTML(备案内容) {
 
 		.exit-ip-detail-toggle:hover,
 		.exit-ip-detail-toggle:focus-visible {
-			color: #8be9ff;
+			color: #2dd4bf;
 			background: rgba(97, 219, 255, 0.16);
 		}
 
@@ -3407,8 +3405,8 @@ function generateHTML(备案内容) {
 		}
 
 		.exit-ip-card.is-active .exit-ip-detail-toggle {
-			color: #8be9ff;
-			background: rgba(97, 219, 255, 0.18);
+			color: #2dd4bf;
+			background: rgba(37, 99, 235, 0.16);
 		}
 
 		.exit-ip-card.is-active .exit-ip-detail-toggle svg {
@@ -3600,10 +3598,10 @@ function generateHTML(备案内容) {
 		}
 
 		.map-popup {
-			font-family: 'Plus Jakarta Sans', system-ui, sans-serif;
+			font-family: Inter, -apple-system, 'Segoe UI', Roboto, 'PingFang SC', 'Microsoft YaHei', system-ui, sans-serif;
 			font-size: 0.88rem;
 			line-height: 1.65;
-			color: #10253d;
+			color: #14201e;
 		}
 
 		.map-popup b {
@@ -3669,7 +3667,7 @@ function generateHTML(备案内容) {
 		.site-footer a,
 		#visit-count {
 			color: #bff4ff;
-			font-family: 'Space Grotesk', 'Plus Jakarta Sans', sans-serif;
+			font-family: 'JetBrains Mono', ui-monospace, Inter, -apple-system, 'Segoe UI', Roboto, 'PingFang SC', 'Microsoft YaHei', sans-serif;
 			font-weight: 600;
 			letter-spacing: -0.02em;
 			font-variant-numeric: tabular-nums;
@@ -3692,7 +3690,7 @@ function generateHTML(备案内容) {
 		}
 
 		html[data-theme='light'] .brand-title {
-			color: #10253d;
+			color: #14201e;
 		}
 
 		html[data-theme='light'] .theme-toggle {
@@ -3718,7 +3716,7 @@ function generateHTML(备案内容) {
 		html[data-theme='light'] .panel-badge {
 			background: rgba(14, 165, 233, 0.08);
 			border-color: rgba(14, 165, 233, 0.16);
-			color: #0f5f8e;
+			color: #2563eb;
 		}
 
 		html[data-theme='light'] .summary-backend-badge.state-ready {
@@ -3759,7 +3757,7 @@ function generateHTML(备案内容) {
 		}
 
 		html[data-theme='light'] .history-toggle:hover {
-			color: #10253d;
+			color: #14201e;
 			background: rgba(14, 165, 233, 0.1);
 		}
 
@@ -3771,7 +3769,7 @@ function generateHTML(备案内容) {
 
 		html[data-theme='light'] .history-item:hover {
 			background: rgba(14, 165, 233, 0.08);
-			color: #10253d;
+			color: #14201e;
 		}
 
 		html[data-theme='light'] .history-item.is-empty {
@@ -3818,7 +3816,7 @@ function generateHTML(备案内容) {
 		html[data-theme='light'] .exit-detail-state.is-neutral {
 			background: rgba(255, 255, 255, 0.82);
 			border-color: rgba(95, 123, 150, 0.16);
-			color: #10253d;
+			color: #14201e;
 		}
 
 		html[data-theme='light'] .exit-detail-state.is-danger {
@@ -3874,7 +3872,7 @@ function generateHTML(备案内容) {
 		html[data-theme='light'] .results-pill.state-running {
 			background: rgba(14, 165, 233, 0.12);
 			border-color: rgba(14, 165, 233, 0.18);
-			color: #0f5f8e;
+			color: #2563eb;
 		}
 
 		html[data-theme='light'] .results-pill.state-done {
@@ -3906,19 +3904,19 @@ function generateHTML(备案内容) {
 		html[data-theme='light'] .filter-toggle:hover {
 			border-color: rgba(14, 165, 233, 0.24);
 			background: rgba(14, 165, 233, 0.08);
-			color: #10253d;
+			color: #14201e;
 		}
 
 		html[data-theme='light'] .filter-chip:hover {
 			border-color: rgba(14, 165, 233, 0.24);
 			background: rgba(14, 165, 233, 0.08);
-			color: #10253d;
+			color: #14201e;
 		}
 
 		html[data-theme='light'] .filter-chip.is-active {
 			border-color: rgba(14, 165, 233, 0.32);
 			background: linear-gradient(135deg, rgba(14, 165, 233, 0.16), rgba(5, 150, 105, 0.1));
-			color: #0f5f8e;
+			color: #2563eb;
 			box-shadow: inset 0 0 0 1px rgba(14, 165, 233, 0.08);
 		}
 
@@ -4071,7 +4069,7 @@ function generateHTML(备案内容) {
 		}
 
 		html[data-theme='light'] .site-footer a:hover {
-			color: #10253d;
+			color: #14201e;
 			border-bottom-color: rgba(16, 37, 61, 0.2);
 		}
 
@@ -4164,11 +4162,11 @@ function generateHTML(备案内容) {
 
 		html[data-theme='light'] .exit-ip-copy:hover,
 		html[data-theme='light'] .exit-ip-copy:focus-visible {
-			color: #0b7fb5;
+			color: #0d9488;
 		}
 
 		html[data-theme='light'] .exit-ip-card.is-copied .exit-ip-copy {
-			color: #0b7fb5;
+			color: #0d9488;
 		}
 
 		html[data-theme='light'] .exit-ip-detail-toggle {
@@ -4178,12 +4176,12 @@ function generateHTML(备案内容) {
 
 		html[data-theme='light'] .exit-ip-detail-toggle:hover,
 		html[data-theme='light'] .exit-ip-detail-toggle:focus-visible {
-			color: #0b7fb5;
+			color: #0d9488;
 			background: rgba(14, 165, 233, 0.14);
 		}
 
 		html[data-theme='light'] .exit-ip-card.is-active .exit-ip-detail-toggle {
-			color: #0b7fb5;
+			color: #0d9488;
 			background: rgba(14, 165, 233, 0.16);
 		}
 
@@ -6780,9 +6778,11 @@ function generateHTML(备案内容) {
 
 		function getFlagUrlFromCountryCode(countryCode) {
 			const normalized = String(countryCode || '').trim().toLowerCase();
-			return /^[a-z]{2}$/.test(normalized)
-				? 'https://ipdata.co/flags/' + normalized + '.png'
-				: '';
+			if (!/^[a-z]{2}$/.test(normalized)) return '';
+			const upper = normalized.toUpperCase() === 'UK' ? 'GB' : normalized.toUpperCase();
+			const emoji = String.fromCodePoint(...[...upper].map(ch => 127397 + ch.charCodeAt(0)));
+			const svg = '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><text y=".9em" font-size="90">' + emoji + '</text></svg>';
+			return 'data:image/svg+xml;charset=utf-8,' + encodeURIComponent(svg);
 		}
 
 		function getFlagUrlFromExitIps(exitIps) {
