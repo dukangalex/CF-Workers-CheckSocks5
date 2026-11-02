@@ -4345,6 +4345,13 @@ function generateHTML(备案内容) {
 		}
 	
 /* edgetunnel-ipfilter 结构层 (2.2): 去氛围层, 单列工作区 + 顶部状态条, 扁平卡片 */
+.ipf-hero{border:1px solid rgba(20,184,166,.45);background:linear-gradient(135deg,rgba(20,184,166,.13),rgba(37,99,235,.09));border-radius:10px;padding:16px 20px;margin-bottom:14px}
+.ipf-hero-title{font-size:19px;font-weight:800;display:flex;flex-wrap:wrap;gap:10px;align-items:baseline}
+.ipf-hero-title span{font-size:13px;font-weight:400;opacity:.65}
+.ipf-hero-steps{display:flex;flex-wrap:wrap;gap:8px;align-items:center;margin-top:12px;font-size:13px}
+.ipf-hero-steps b{background:rgba(20,184,166,.16);border:1px solid rgba(20,184,166,.5);border-radius:999px;padding:6px 12px;font-weight:700}
+.ipf-hero-steps i{opacity:.5;font-style:normal}
+.ipf-hero-tip{margin-top:10px;font-size:12.5px;opacity:.75}
 .ambient{display:none !important}
 .page-shell{max-width:1400px !important}
 .site-header{padding:12px 22px !important;border-bottom:1px solid var(--line);margin-bottom:16px !important}
@@ -4391,6 +4398,12 @@ function generateHTML(备案内容) {
 			</div>
 			<div class="header-note">基于 Cloudflare Workers 的 SOCKS5 / HTTP / HTTPS / TURN / SSTP 代理检测工具，支持单个或批量代理解析、可用性验证与出口信息查看。</div>
 		</header>
+
+		<section class="ipf-hero">
+			<div class="ipf-hero-title">🔍 代理可用性检测 <span>粘贴一个代理，立刻知道它能不能用、出口在哪里</span></div>
+			<div class="ipf-hero-steps"><b>① 粘贴代理链接或 IP:端口（多个就开批量检测）</b><i>→</i><b>② 点「开始检测」</b><i>→</i><b>③ 看下方结果：是否有效、出口 IP 与落地位置</b></div>
+			<div class="ipf-hero-tip">本部署已配置的 SOCKS5 反代不用粘贴：点页面顶部「检测已配置的 SOCKS5 反代」即可一键检测。</div>
+		</section>
 
 		<main class="site-main">
 			<section class="workspace-grid">
